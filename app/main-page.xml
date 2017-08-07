@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page">
+
+    <ActivityIndicator busy="{{ isLoading }}" />
+
+    <Page.actionBar>
+        <ActionBar title="Barra de búsqueda" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout orientation="vertical">
+
+        <SearchBar id="searchBar" hint="Buscar..." text="" clear="onClear" submit="onSubmit" loaded="searchBarLoaded" unloaded="searchBarUnloaded"></SearchBar>
+
+        <ListView class="list-group" items="{{ peopleList }}" itemTap="showDetail">
+            <ListView.itemTemplate>
+                <StackLayout class="list-group-item" orientation="vertical">
+                    <Label class="list-group-item-heading" text="{{ fullName }}" horiztonalAlignment="left" verticalAlignment="center"></Label>
+                    <Label class="list-group-item-text" text="{{ company }}" horiztonalAlignment="left" verticalAlignment="center"></Label>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</Page>
